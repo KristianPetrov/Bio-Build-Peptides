@@ -19,7 +19,7 @@ export default async function ShopPage() {
   const cards = Object.fromEntries(
     products.map((product, index) => [
       product.slug,
-      <ProductCard key={product.slug} product={product} priority={index < 4} />,
+      <ProductCard key={product.slug} product={product} priority={index < 3} />,
     ]),
   );
 

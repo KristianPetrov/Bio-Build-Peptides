@@ -129,7 +129,7 @@ export function ShopBrowser({
       </p>
 
       {visible.length > 0 ? (
-        <ul className="mt-5 grid grid-cols-1 gap-5 min-[480px]:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <ul className="mt-5 grid grid-cols-1 gap-6 min-[600px]:grid-cols-2 xl:grid-cols-3 xl:gap-7">
           {visible.map((product) => (
             <li key={product.slug}>{cards[product.slug]}</li>
           ))}

@@ -3,6 +3,7 @@ import { Cinzel, Cormorant_Garamond, Jost } from "next/font/google";
 import { AgeGate } from "@/components/age-gate";
 import { CartDrawer } from "@/components/cart/cart-drawer";
 import { CartProvider } from "@/components/cart/cart-provider";
+import { FloatingCart } from "@/components/cart/floating-cart";
 import { RevealObserver } from "@/components/reveal-observer";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
@@ -88,6 +89,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           </main>
           <SiteFooter />
           <CartDrawer />
+          <FloatingCart />
           <AgeGate />
           <RevealObserver />
         </CartProvider>

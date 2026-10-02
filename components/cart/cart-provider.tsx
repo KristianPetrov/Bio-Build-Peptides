@@ -36,7 +36,7 @@ type CartContextValue = {
   isOpen: boolean;
   open: () => void;
   close: () => void;
-  add: (line: Omit<CartLine, "id" | "quantity">, quantity?: number) => void;
+  add: (line: Omit<CartLine, "id" | "quantity">, quantity?: number, options?: { open?: boolean }) => void;
   setQuantity: (id: string, quantity: number) => void;
   remove: (id: string) => void;
   clear: () => void;
@@ -103,7 +103,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     };
   }, [isOpen]);
 
-  const add = useCallback<CartContextValue["add"]>((line, quantity = 1) => {
+  const add = useCallback<CartContextValue["add"]>((line, quantity = 1, options) => {
     const id = `${line.variantId}:${line.packSize}`;
     const current = read();
     const existing = current.find((item) => item.id === id);
@@ -114,7 +114,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     } else {
       write([...current, { ...line, id, quantity }]);
     }
-    setOpen(true);
+    if (options?.open !== false) setOpen(true);
   }, []);
 
   const setQuantity = useCallback((id: string, quantity: number) => {

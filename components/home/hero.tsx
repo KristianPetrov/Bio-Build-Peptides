@@ -29,6 +29,7 @@ export function Hero({ productCount }: { productCount: number }) {
           className="relative -z-10 block h-[60svh] max-h-[34rem] w-full object-cover object-[50%_72%] lg:absolute lg:inset-y-0 lg:right-0 lg:left-auto lg:h-full lg:max-h-none lg:w-[78%] lg:object-[74%_center]"
         />
       </picture>
+      <span className="hero-helix-light" aria-hidden />
       {/* Desktop: fade the image into the headline column. Mobile: fade into the content below. */}
       <div
         aria-hidden

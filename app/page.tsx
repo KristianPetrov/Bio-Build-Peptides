@@ -72,7 +72,7 @@ export default async function HomePage() {
             </Link>
           </div>
         </div>
-        <ul className="mt-12 grid grid-cols-1 gap-5 min-[480px]:grid-cols-2 lg:grid-cols-3">
+        <ul className="mt-12 grid grid-cols-1 gap-6 min-[600px]:grid-cols-2 xl:grid-cols-3">
           {showcase.map((product, index) => (
             <li key={product.slug} data-reveal style={{ "--reveal-delay": `${(index % 3) * 90}ms` } as React.CSSProperties}>
               <ProductCard product={product} index={index} />
@@ -154,7 +154,7 @@ export default async function HomePage() {
                   key={size}
                   data-reveal
                   style={{ "--reveal-delay": `${index * 110}ms` } as React.CSSProperties}
-                  className={`relative bg-onyx px-8 py-12 text-center ${size === 10 ? "bg-[radial-gradient(ellipse_at_top,#241c11_0%,#0c0b09_70%)]" : ""}`}
+                  className={`ambient-panel relative bg-onyx px-8 py-12 text-center ${size === 10 ? "bg-[radial-gradient(ellipse_at_top,#241c11_0%,#0c0b09_70%)]" : ""}`}
                 >
                   {size === 10 ? (
                     <span className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gold-300 px-3 py-1 text-[0.5625rem] font-semibold tracking-[0.24em] text-void uppercase">
@@ -247,14 +247,16 @@ export default async function HomePage() {
 
       {/* Closing CTA */}
       <section className="relative mx-auto mt-32 mb-28 max-w-[1320px] px-5 sm:px-8" aria-labelledby="cta-heading">
-        <div className="relative overflow-hidden border hairline bg-[radial-gradient(ellipse_at_center,#1e1810_0%,#050505_70%)] px-6 py-24 text-center" data-reveal>
-          <Image
-            src="/images/helix-emblem.png"
-            alt=""
-            width={600}
-            height={600}
-            className="blend-lighten pointer-events-none absolute top-1/2 left-1/2 w-[34rem] max-w-none -translate-x-1/2 -translate-y-1/2 opacity-[0.13]"
-          />
+        <div className="ambient-panel relative overflow-hidden border hairline bg-[radial-gradient(ellipse_at_center,#1e1810_0%,#050505_70%)] px-6 py-24 text-center" data-reveal>
+          <div className="closing-helix" aria-hidden>
+            <Image
+              src="/images/helix-emblem.png"
+              alt=""
+              width={600}
+              height={600}
+              className="blend-lighten h-full w-full object-contain"
+            />
+          </div>
           <div className="relative">
             <HelixRule className="mx-auto max-w-xs" />
             <h2 id="cta-heading" className="mt-10 font-display text-[clamp(2.2rem,5vw,4rem)] leading-[1.04] tracking-[0.03em] text-gilt">

@@ -83,7 +83,11 @@ export function Wordmark({
       className={`inline-flex items-center font-display font-semibold leading-none tracking-[0.04em] ${sizes.text} ${sizes.gap} ${className}`}
     >
       <span className={size === "xl" ? "text-gilt-sheen" : "text-gilt"}>BIO</span>
-      <HelixGlyph className={`${sizes.glyph} shrink-0 -my-2`} />
+      {size === "xl" ? (
+        <span className="gilded-helix shrink-0 -my-2" aria-hidden>
+          <span className="gilded-helix-turn"><span className="gilded-helix-texture" /></span>
+        </span>
+      ) : <HelixGlyph className={`${sizes.glyph} shrink-0 -my-2`} />}
       <span className={size === "xl" ? "text-gilt-sheen" : "text-gilt"}>BUILD</span>
     </span>
   );

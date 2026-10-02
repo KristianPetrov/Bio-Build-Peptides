@@ -48,7 +48,7 @@ export function Vial({
         alt=""
         fill
         sizes={sizes}
-        preload={priority}
+        loading={priority ? "eager" : "lazy"}
         className="blend-lighten object-contain"
       />
       <div
