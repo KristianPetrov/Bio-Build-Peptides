@@ -510,27 +510,16 @@ body {
   to { opacity: 1; transform: none; }
 }
 
-/* Animate the original ribbon artwork, retaining its metallic shading. */
+/* The spinning helices are drawn as 3D geometry by <SpinningHelix />. */
 .gilded-helix {
   position: relative;
   width: 0.42em;
   height: 1.3em;
-  perspective: 600px;
-  mix-blend-mode: lighten;
 }
 .gilded-helix-turn {
   position: absolute;
-  inset: 0;
-  transform-style: preserve-3d;
-  animation: helix-turn 48s linear infinite;
+  inset: 0 -50%;
   filter: drop-shadow(0 0 5px rgba(217, 182, 114, 0.22));
-}
-.gilded-helix-texture {
-  position: absolute;
-  inset: -11.5% -140%;
-  background: url('/images/helix-emblem.png') center / contain no-repeat;
-  mask: url('/images/helix-emblem.png') center / contain no-repeat;
-  mask-mode: luminance;
 }
 .closing-helix {
   pointer-events: none;
@@ -541,9 +530,6 @@ body {
   margin: -17rem 0 0 -17rem;
   opacity: 0.16;
   mix-blend-mode: lighten;
-  mask: url('/images/helix-emblem.png') center / contain no-repeat;
-  mask-mode: luminance;
-  animation: helix-turn 48s linear infinite;
 }
 .hero-helix-light {
   pointer-events: none;
@@ -565,10 +551,6 @@ body {
 @media (min-width: 1024px) {
   .hero-helix-light { top: 19%; right: 9%; width: 34%; height: 68%; }
 }
-@keyframes helix-turn {
-  from { transform: perspective(900px) rotateY(0deg); }
-  to { transform: perspective(900px) rotateY(360deg); }
-}
 @keyframes helix-light {
   0%, 100% { opacity: 0.45; transform: scale(0.95); }
   50% { opacity: 0.9; transform: scale(1.07); }
@@ -579,6 +561,6 @@ body {
   .product-card:hover,
   .floating-cart-button:hover { transform: none; }
   .product-card:hover .product-vial { transform: scale(1.23); }
-  .gilded-helix-turn, .closing-helix, .hero-helix-light,
+  .hero-helix-light,
   .floating-cart-bag, .cart-panel { animation: none; }
 }

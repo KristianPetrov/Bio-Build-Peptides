@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { useId } from "react";
+import { SpinningHelix } from "./spinning-helix";
 
 /** Vertical double helix used as the wordmark's centre glyph and as an ornament. */
 export function HelixGlyph({
@@ -85,7 +86,7 @@ export function Wordmark({
       <span className={size === "xl" ? "text-gilt-sheen" : "text-gilt"}>BIO</span>
       {size === "xl" ? (
         <span className="gilded-helix shrink-0 -my-2" aria-hidden>
-          <span className="gilded-helix-turn"><span className="gilded-helix-texture" /></span>
+          <span className="gilded-helix-turn"><SpinningHelix span={0.9} /></span>
         </span>
       ) : <HelixGlyph className={`${sizes.glyph} shrink-0 -my-2`} />}
       <span className={size === "xl" ? "text-gilt-sheen" : "text-gilt"}>BUILD</span>

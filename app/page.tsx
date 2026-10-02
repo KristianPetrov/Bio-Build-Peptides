@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { HelixGlyph, HelixRule, SectionLabel } from "@/components/brand";
+import { SpinningHelix } from "@/components/spinning-helix";
 import { Hero } from "@/components/home/hero";
 import { ProductCard } from "@/components/product-card";
 import { CATEGORIES } from "@/lib/catalog-data";
@@ -249,13 +250,7 @@ export default async function HomePage() {
       <section className="relative mx-auto mt-32 mb-28 max-w-[1320px] px-5 sm:px-8" aria-labelledby="cta-heading">
         <div className="ambient-panel relative overflow-hidden border hairline bg-[radial-gradient(ellipse_at_center,#1e1810_0%,#050505_70%)] px-6 py-24 text-center" data-reveal>
           <div className="closing-helix" aria-hidden>
-            <Image
-              src="/images/helix-emblem.png"
-              alt=""
-              width={600}
-              height={600}
-              className="blend-lighten h-full w-full object-contain"
-            />
+            <SpinningHelix span={0.8} rungs={10} />
           </div>
           <div className="relative">
             <HelixRule className="mx-auto max-w-xs" />
